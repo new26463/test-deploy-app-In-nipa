@@ -1,0 +1,75 @@
+include ../mixins/flash-messages
+
+doctype html
+html
+
+	//- HTML HEADER
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title || 'keystone-starter'
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(href="/styles/test.css", rel="stylesheet")
+		link(href="/styles/site.css", rel="stylesheet")
+
+		if user && user.canAccessKeystone
+			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+
+		block css
+
+		block head
+
+	//- HTML BODY
+	body
+
+		//- HEADER
+		#header: .container
+
+			div(role="navigation").navbar.navbarFixed
+				.container-fluid
+					.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+					.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							each link in navLinks
+								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+							if user
+								if user.canAccessKeystone
+									li: a(href='/keystone') Open Keystone
+								li: a(href='/keystone/signout') Sign Out
+							else
+								li: a(href='/keystone/signin') Sign In
+
+		//- BODY
+		#body
+
+			block intro
+			+flash-messages(messages)
+			block content
+
+		script.
+			(function(s, u, b, i, z){
+			u[i]=u[i]||function(){
+			u[i].t=+new Date();
+			(u[i].q=u[i].q||[]).push(arguments);
+			};
+			z=s.createElement('script');
+			var zz=s.getElementsByTagName('script')[0];
+			z.async=1; z.src=b; z.id='subiz-script';
+			zz.parentNode.insertBefore(z,zz);
+			})(document, window, 'https://widgetv4.subiz.com/static/js/app.js', 'subiz');
+			subiz('setAccount', 'acqicswziwbonnvwmmfo');
+
+		//- JAVASCRIPT
+
+		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
+		if user && user.canAccessKeystone
+			script(src='/keystone/js/content/editor.js')
+		block js

@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+mixin team(team)
+	.col-md-4
+		.team(data-ks-editable=editable(user, { list: 'Team' }))
+			if team
+
+
+block content
+
+	.container-fulid#firstSection: .fixHeight
+		h1.color_white.text_center DIGITAL CREATIVE AGENCY
+		p.color_white.text_center We bring ide@s to life
+	br
+	.container
+		h3 Meet Our Team
+		.container: .row
+			//- each team in data.team
+				+team(team)
+
+	//- team ยังต่อกับ js ไม่สมบูรณ์ ทำให้รันไม่ได้
+	//- ดู mixin, if data.team ถ้าใช้เป็นจะรันได้
+	//- files Team.js, index.js, index.pug
+	//- ลองแกะโค๊ดจาก blog.pug, block.js, post.js

@@ -1,0 +1,90 @@
+body {
+    line-height: 1.6 !important;
+}
+.fixHeight {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+#firstSection {
+    height: 100vh;
+    background: url("http://rtsolutionz.com/raven/demo-zien/zien/images/home-banner.jpg");
+    background-size: cover;
+}
+.color_white {
+    color: white;
+}
+#header {
+    margin-top: 10px !important;
+}
+.navbar {
+    margin-bottom: 10px !important;
+}
+.nav>li>a{
+    color: #444 !important;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent !important;
+    color: #444 !important;
+}
+.img_center {
+    width: 100%;
+    margin: 0 auto;
+}
+.card {
+    padding: 15px 30px;
+    margin-top: 30px;
+    background: white;
+    /* box-shadow: 0 3px 9px -2px #d0cece; */
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    color: #333;
+    border-radius: 15px;
+}
+.lead {
+    font-size: 12px !important;
+    float: right;
+    line-height: 1.5 !important;
+}
+.color_black {
+    color: #333 !important;
+}
+.img_center {
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.dotdotdot {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+h2 {
+    font-size: 25px !important;
+}
+.bg_color {
+    background:#edafbc;
+}
+.post {
+    margin-top: 15px;
+}
+.text_center {
+    text-align: center;
+    padding: 15px;
+}
+.bg_color2 {
+    background: #edafbc;
+    padding-bottom: 50px;
+}
+.padding_bottom {
+    padding-bottom: 30px;
+    margin: 0 auto;
+    width: 90%;
+    word-wrap: break-word;
+}
+.button-chat {
+    box-shadow: none !important;
+}
